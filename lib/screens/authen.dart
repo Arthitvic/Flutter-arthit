@@ -29,6 +29,32 @@ class _AuthenState extends State<Authen> {
     );
   }
 
+  Widget emailText() {
+    return Container(
+      width: 200.0,
+      child: TextFormField(
+        keyboardType: TextInputType.emailAddress,
+        decoration: InputDecoration(
+          labelText: 'Email:',
+          hintText: 'your@email.com',
+        ),
+      ),
+    );
+  }
+ Widget PasswordText() {
+    return Container(
+      width: 200.0,
+      child: TextFormField(
+        obscureText: true,
+        decoration: InputDecoration(
+          labelText: 'Password:',
+          hintText: 'More 6 ccharacters',
+        ),
+      ),
+    );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +62,12 @@ class _AuthenState extends State<Authen> {
         padding: EdgeInsets.only(top: 60.0),
         alignment: Alignment.topCenter,
         child: Column(
-          children: <Widget>[showLogo(), showtext()],
+          children: <Widget>[
+            showLogo(),
+            showtext(),
+            emailText(),
+            PasswordText(),
+          ],
         ),
       ),
     );
