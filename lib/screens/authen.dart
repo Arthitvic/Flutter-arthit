@@ -41,7 +41,8 @@ class _AuthenState extends State<Authen> {
       ),
     );
   }
- Widget PasswordText() {
+
+  Widget passwordText() {
     return Container(
       width: 200.0,
       child: TextFormField(
@@ -54,11 +55,69 @@ class _AuthenState extends State<Authen> {
     );
   }
 
+  Widget signInButton() {
+    return RaisedButton(
+      color: Colors.blue[400],
+      child: Text(
+        'Sing In',
+        style: TextStyle(
+          color: Colors.white,
+        ),
+      ),
+      onPressed: () {},
+    );
+  }
+
+  Widget signUpButton() {
+    return RaisedButton(
+      color: Colors.blue[400],
+      child: Text(
+        'Sing Up',
+        style: TextStyle(
+          color: Colors.white,
+        ),
+      ),
+      onPressed: () {},
+    );
+  }
+
+  Widget showButton() {
+    return Container(
+      width: 200.0,
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: signInButton(),
+          ),
+          mySizeBox(),
+          Expanded(
+            child: signUpButton(),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget mySizeBox() {
+    return SizedBox(
+      width: 8.0,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+          gradient: RadialGradient(
+            colors: [
+              Colors.white,
+              Colors.yellow[300],
+            ],
+            radius: 3.0,
+            center: Alignment.topCenter,
+          ),
+        ),
         padding: EdgeInsets.only(top: 60.0),
         alignment: Alignment.topCenter,
         child: Column(
@@ -66,7 +125,8 @@ class _AuthenState extends State<Authen> {
             showLogo(),
             showtext(),
             emailText(),
-            PasswordText(),
+            passwordText(),
+            showButton(),
           ],
         ),
       ),
