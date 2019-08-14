@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pun_tpa/screens/register.dart';
 
 class Authen extends StatefulWidget {
   @override
@@ -20,7 +21,7 @@ class _AuthenState extends State<Authen> {
 
   Widget showtext() {
     return Text(
-      'Arthit TPA',
+      'Arthit TPA ',
       style: TextStyle(
           fontSize: 30.0,
           color: Colors.blue[200],
@@ -77,7 +78,11 @@ class _AuthenState extends State<Authen> {
           color: Colors.white,
         ),
       ),
-      onPressed: () {},
+      onPressed: () {
+        print('You click Sing Up');
+        var registerRoute = MaterialPageRoute(builder: (BuildContext context)=> Register());
+        Navigator.of(context).push(registerRoute);
+      },
     );
   }
 
